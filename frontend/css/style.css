@@ -8,7 +8,7 @@ body {
 min-height: 100vh;
 font-family: Arial, sans-serif;
 color: #303329;
-background: linear-gradient(135deg, #B2BD7E, #8E9162);
+background: linear-gradient(135deg, #216651, #3E9278);
 }
 
 #login {
@@ -84,7 +84,7 @@ padding-right: 76px;
 
 #matricula:focus,
 #password:focus {
-border-color: #858b59;
+border-color: #DBB8E3;
 background-color: #fff;
 box-shadow: 0 0 0 4px rgba(142, 145, 98, 0.18);
 transform: translateY(-1px);
@@ -97,14 +97,14 @@ margin-bottom: 20px;
 padding: 0;
 border: none;
 background: none;
-color: #686d43;
+color: #673165;
 font: inherit;
 font-size: 13px;
 cursor: pointer;
 }
 
 #btn-forgot-password:hover {
-color: #454a2d;
+color: #3C0145;
 text-decoration: underline;
 }
 
@@ -117,7 +117,7 @@ min-height: 44px;
 padding: 12px 16px;
 border: none;
 border-radius: 8px;
-background-color: #777c4e;
+background-color: #673165;
 color: #fff;
 font: inherit;
 font-weight: 600;
@@ -126,7 +126,7 @@ transition: background-color 180ms ease, transform 180ms ease, box-shadow 180ms 
 }
 
 #btn-login:hover {
-background-color: #686d43;
+background-color: #3C0145;
 box-shadow: 0 5px 12px rgba(104, 109, 67, 0.22);
 transform: translateY(-1px);
 }
@@ -185,14 +185,14 @@ transform: translateY(-50%);
 padding: 6px 2px;
 background: none;
 border: none;
-color: #686d43;
+color: #673165;
 font: inherit;
 font-size: 13px;
 cursor: pointer;
 }
 
 #visible-password:hover {
-color: #454a2d;
+color: #3C0145;
 text-decoration: underline;
 }
 
