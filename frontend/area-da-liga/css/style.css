@@ -1,0 +1,243 @@
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+min-height: 100vh;
+font-family: Arial, sans-serif;
+color: #303329;
+background: linear-gradient(135deg, #216651, #3E9278);
+}
+
+#login {
+display: flex;
+justify-content: center;
+align-items: center;
+min-height: 100vh;
+padding: 24px;
+}
+
+#login-panel {
+display: flex;
+flex-direction: column;
+align-items: center;
+width: min(100%, 420px);
+padding: 48px 40px;
+gap: 32px;
+background-color: #fff;
+border: 1px solid rgba(48, 51, 41, 0.06);
+border-radius: 16px;
+box-shadow: 0 18px 45px rgba(48, 51, 41, 0.535);
+animation: panel-entry 500ms ease-out both;
+}
+
+#logo img {
+display: block;
+width: 88px;
+height: auto;
+}
+
+#login-form {
+display: flex;
+flex-direction: column;
+width: 100%;
+}
+
+#login-form label {
+margin-bottom: 8px;
+text-align: left;
+font-size: 14px;
+font-weight: 600;
+color: #45483a;
+}
+
+#matricula,
+#password {
+width: 100%;
+margin-bottom: 22px;
+padding: 12px 14px;
+border: 1px solid #d9dccf;
+border-radius: 8px;
+outline: none;
+background-color: #fbfcf8;
+color: #303329;
+font: inherit;
+transition: border-color 180ms ease, box-shadow 180ms ease, background-color 180ms ease, transform 180ms ease;
+}
+
+#matricula:hover,
+#password:hover {
+border-color: #a8ad8a;
+}
+
+.password-field {
+position: relative;
+margin-bottom: 22px;
+}
+
+.password-field #password {
+margin-bottom: 0;
+padding-right: 76px;
+}
+
+#matricula:focus,
+#password:focus {
+border-color: #DBB8E3;
+background-color: #fff;
+box-shadow: 0 0 0 4px rgba(142, 145, 98, 0.18);
+transform: translateY(-1px);
+}
+
+#btn-forgot-password {
+align-self: flex-end;
+margin-top: -12px;
+margin-bottom: 20px;
+padding: 0;
+border: none;
+background: none;
+color: #673165;
+font: inherit;
+font-size: 13px;
+cursor: pointer;
+}
+
+#btn-forgot-password:hover {
+color: #3C0145;
+text-decoration: underline;
+}
+
+#btn-login {
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 9px;
+min-height: 44px;
+padding: 12px 16px;
+border: none;
+border-radius: 8px;
+background-color: #673165;
+color: #fff;
+font: inherit;
+font-weight: 600;
+cursor: pointer;
+transition: background-color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
+}
+
+#btn-login:hover {
+background-color: #3C0145;
+box-shadow: 0 5px 12px rgba(104, 109, 67, 0.22);
+transform: translateY(-1px);
+}
+
+#btn-login:active {
+transform: translateY(0);
+}
+
+#btn-login:disabled {
+cursor: wait;
+opacity: 0.85;
+}
+
+#login-message {
+min-height: 20px;
+margin-top: 14px;
+text-align: center;
+font-size: 14px;
+}
+
+#login-message.is-success {
+color: #3f6b37;
+}
+
+#login-message.is-error {
+color: #a33d36;
+}
+
+#demo-footer {
+margin-top: 8px;
+color: #777a6d;
+text-align: center;
+font-size: 12px;
+line-height: 1.5;
+}
+
+.spinner {
+display: none;
+width: 16px;
+height: 16px;
+border: 2px solid rgba(255, 255, 255, 0.45);
+border-top-color: #fff;
+border-radius: 50%;
+}
+
+#btn-login.is-loading .spinner {
+display: inline-block;
+animation: spinner-rotation 700ms linear infinite;
+}
+
+#visible-password {
+position: absolute;
+right: 12px;
+top: 50%;
+transform: translateY(-50%);
+padding: 6px 2px;
+background: none;
+border: none;
+color: #673165;
+font: inherit;
+font-size: 13px;
+cursor: pointer;
+}
+
+#visible-password:hover {
+color: #3C0145;
+text-decoration: underline;
+}
+
+#visible-password:focus-visible {
+outline: 2px solid #858b59;
+outline-offset: 2px;
+border-radius: 3px;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+-webkit-appearance: none;
+margin: 0;
+}
+
+@keyframes panel-entry {
+from {
+    opacity: 0;
+    transform: translateY(12px);
+}
+to {
+    opacity: 1;
+    transform: translateY(0);
+}
+}
+
+@keyframes spinner-rotation {
+to {
+    transform: rotate(360deg);
+}
+}
+
+@media (max-width: 480px) {
+#login-panel {
+    padding: 36px 24px;
+}
+}
+
+@media (prefers-reduced-motion: reduce) {
+*,
+*::before,
+*::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+}
+}
