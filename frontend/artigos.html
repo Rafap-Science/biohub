@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="BioHub: artigos crientíficos, notícias e encontros da Liga Acadêmica de Biotecnologia da UniALFA">
+    <title>BioHub - Liga Acadêmica de Biotecnologia</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+
+    
+    
+
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+
+<body>
+
+
+    <header class="cabecalho">
+        <a href="index.html" class="logo" aria-label="BioHub, ir para o início">
+            <img src="img/Logo Oficial - BioHub.jpeg" alt="" class="logo-img">
+            <span class="logo-nome">BioHub</span>
+        </a>
+
+        <nav class="menu" aria-label="Menu principal">
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="noticias.html">Notícias</a></li>
+                <li><a href="artigos.html"  aria-current="page">Artigos</a></li>
+                <li><a href="encontros.html">Encontros</a></li>
+                <button type="button" id="teste_button">teste</button>
+                <input id="titulo_input" placeholder="titulo">
+                <input type="search" id="pesquisa" placeholder="pesquisar">
+            </ul>
+        </nav>
+
+        <a href="area-da-liga.html" class="botao-area-liga">Área da Liga &rarr;</a>
+
+    </header>
+
+    <main>
+        <div class="main_div">
+            <section class="artigos" id="lista-artigos">
+
+
+                <div class="card">
+                    <div class="card_imagem">
+                        <img src="" alt="EXEMPLO" class="imagem_cortada" >
+                    </div>
+
+                    <div class="artigo_intro">
+                        <h3>${artigo.titulo}</h3>
+                        <p>${artigo.resumo}</p>
+                        <a href="${artigo.link}">Ler mais</a>
+                    </div>
+                </div>
+                
+                
+
+                
+
+
+
+            </section>
+        </div>
+
+
+
+
+
+        <footer>
+                <h3>BIO <strong>HUB</strong></h3>
+
+
+
+
+        </footer>
+
+        <script type="module" src="js/main.js" defer></script>
+    </main>
+
+</body>
+</html>
