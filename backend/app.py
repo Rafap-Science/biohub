@@ -8,7 +8,7 @@ CORS(app)
 
 @app.route('/')
 def home():
-    return "Servidor  do BioHub - Projectos esta rodando!"
+    return "Bem vindo a API da LAB"
 
 if __name__ == '__main__':
     app.run(debug=True)
