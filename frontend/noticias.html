@@ -15,7 +15,63 @@
 </head>
 
 <body>
+
+    <!-- 1.FAIXA SUPERIOR (idêntica à Home) --> 
+    <div class="faixa-superior">
+        <span class="ponto-verde" aria-hidden="true"></span>
+        <strong>BioHub</strong>
+        <span class="nome-faixa">Liga Acadêmica de Biotecnologia</span>
+    </div>
+
     
+    <!-- 2. CABEÇALHO (com "Notícias" ativo) -->
+    <header class="cabecalho" id="topo-noticias">
+        <a href="index.html" class="logo" aria-label="BioHub, ir para o início">
+            <img src="img/Logo Oficial - BioHub.jpeg" alt="" class="logo-img">
+            <span class="logo-nome">BioHub</span>
+        </a>
+
+        <nav class="menu" aria-label="Menu principal">
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="noticias.html" aria-current="page">Notícias</a></li>
+                <li><a href="artigos.html">Artigos</a></li>
+                <li><a href="encontros.html">Encontros</a></li>
+            </ul>
+        </nav>
+
+        <a href="area-da-liga/index.html" class="botao-area-liga">Área da Liga &rarr;</a>
+    </header>
+
     
+    <!-- 3. CONTEÚDO PRINCIPAL DA PÁGINA DE NOTÍCIAS -->
+    <main class="pagina-noticias">
+
+        <!-- 3.1 BANNER HERO ("O que acontece na LAB") -->
+        <section class="banner-noticias" aria-labelledby="título-página-notícias">
+
+            <!-- Ícone verde com desenho de jornal/documento em SVG -->
+             <div class="banner-noticias-icone" aria-hidden="true">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"></path>
+                    <path d="M18 14h-8"></path>
+                    <path d="M15 18h-5"></path>
+                    <path d="M10 6h8v4h-8V6Z"></path>
+                </svg>
+             </div>
+
+
+            <div class="banner-noticias-textos">
+                <p class="sobretitulo">Notícias</p>
+                <h1 id="titulo-pagina-noticias">O que acontece na LAB</h1>
+                <p class="banner-noticias-descricao">
+                    Avisos da liga, representação estudantil e informações que movimentam nossa comunidade
+                </p>
+            </div>
+
+            <span class="banner-marca-dagua" aria-hidden="true">PAGE / NOTÍCIAS</span>
+        </section>
+
+    </main>
 </body>
 </html>
