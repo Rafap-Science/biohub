@@ -1,3 +1,6 @@
+#! 127.0.0.1:5000/api/posts
+
+
 import os
 from flask import Flask, jsonify
 from flask_cors import CORS
