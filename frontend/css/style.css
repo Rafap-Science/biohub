@@ -34,11 +34,13 @@
 
     /* Vindos do site do colega: card do início, barra de números e botões do card */
     --verde-gelo: #B9E2D6;
+    --gradiente-artigo: linear-gradient(110deg, #004D3266 0%, #063B3B33 25%, #172B491a 48%, #35105C33 72%, #6500A866 100%);
     --gradiente-card: linear-gradient(110deg, #004D32 0%, #063B3B 25%, #172B49 48%, #35105C 72%, #6500A8 100%);
     --gradiente-barra: linear-gradient(110deg, #004D32 0%, #063B3B 55%, #172B49 100%);
     --botao-verde: linear-gradient(135deg, #2E7D32, #00A86B);
     --botao-roxo: linear-gradient(135deg, #7B1FA2, #5E1590);
     --sombra-destaque: 0 20px 40px rgba(0, 0, 0, 0.28), 0 0 25px rgba(76, 175, 80, 0.18), 0 0 45px rgba(123, 31, 162, 0.32);
+    --sombra-vidro:0 8px 32px rgba(0, 0, 0, 0.28), 0 0 25px rgba(76, 175, 80, 0.18), 0 0 45px rgba(123, 31, 162, 0.32);
 
     --fonte-principal: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
     --fonte-titulo: 'Fraunces', Georgia, 'Times New Roman', serif;
@@ -1440,6 +1442,8 @@ a:focus-visible {
 
 
 
+
+
 }
 
 .artigos{
@@ -1453,12 +1457,16 @@ a:focus-visible {
 
     
     
-    
+    background: var(--gradiente-artigo);
+    backdrop-filter: blur(16px);
 
-    background-color: var(--verde-suave);
+    
+    
     padding: 50px 30px;
     border-radius: 10px;
+    box-shadow: var(--sombra-vidro);
 
+    margin-top: 80px;
 
     
 
@@ -1515,3 +1523,25 @@ a:focus-visible {
 
     object-fit: cover;
     object-position: center;}
+
+
+
+
+
+
+.teste{
+    justify-content:space-around ;
+    display: grid;
+    gap:10px;
+    grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+    background: var(--gradiente-artigo);
+    backdrop-filter: blur(16px);
+    padding: 50px 30px;
+    border-radius: 10px;
+    box-shadow: var(--sombra-vidro);
+
+}
+
+#campos_testee{
+
+}

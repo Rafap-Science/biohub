@@ -34,9 +34,8 @@
                 <li><a href="noticias.html">Notícias</a></li>
                 <li><a href="artigos.html"  aria-current="page">Artigos</a></li>
                 <li><a href="encontros.html">Encontros</a></li>
-                <button type="button" id="teste_button">teste</button>
-                <input id="titulo_input" placeholder="titulo">
-                <input type="search" id="pesquisa" placeholder="pesquisar">
+
+                
             </ul>
         </nav>
 
@@ -45,6 +44,22 @@
     </header>
 
     <main>
+
+        <!-- Div teporaria para os botoes que adcionam artigos-->
+        <div class="teste">
+            <div id="campos_teste">
+                <input id="titulo_input" placeholder="titulo">
+                <input id="subtitulo_input" placeholder="subtitulo">
+                <input id="img_input" placeholder="img">
+                <input id="link_input" placeholder="link de destino">
+            </div>
+            <button type="button" id="teste_button">Enviar ao Banco</button>
+        </div>
+
+
+
+
+
         <div class="main_div">
             <section class="artigos" id="lista-artigos">
 
@@ -74,16 +89,23 @@
 
 
 
-        <footer>
-                <h3>BIO <strong>HUB</strong></h3>
 
-
-
-
-        </footer>
 
         <script type="module" src="js/main.js" defer></script>
     </main>
+
+    <footer class="rodape">
+            <div class="rodape-marca">
+                <img src="img/Logo Oficial - BioHub.jpeg" alt="Logo da Liga Acadêmica de Biotecnologia" class="rodape-logo">
+                <div>
+                    <p class="rodape-titulo">BioHub</p>
+                    <p>Liga Acadêmica de Biotecnologia &middot; UniAlfa</p>
+                    <p>email-exemplo@biohub.com &middot; @lab-unialfa</p>
+                </div>
+            </div>
+
+            <p class="direitos">&copy; 2026 Projeto BioHub &middot; Todos os Direitos Reservados</p>
+    </footer>
 
 </body>
 </html>

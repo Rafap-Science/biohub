@@ -6,7 +6,7 @@ const db = createClient(
 );
 
 const lista = document.getElementById('lista-artigos');
-const pesquisa = document.getElementById('pesquisa')
+
 
 let todos_artigos = [];
 
@@ -17,12 +17,16 @@ function criarCard(info_banco) {
   const card = document.createElement('div');
   card.className = 'card';
   card.innerHTML = `
+    <div class="card_imagem">
+      <img src="" alt="EXEMPLO" class="imagem_cortada" >
+    </div>
     <div class="artigo_intro">
       <h3></h3><p></p><a>Ler mais</a>
     </div>`;
   card.querySelector('h3').textContent = info_banco.titulo;
   card.querySelector('p').textContent = info_banco.sub_titulo ?? '';
   card.querySelector('a').href = info_banco.link_artigo ?? '#';
+  card.querySelector('img').src = info_banco.imagem;
   return card;
 }
 
@@ -58,24 +62,11 @@ document.getElementById('teste_button').addEventListener('click', async () => {
 });
 
 
-// Barra de Pesquisa
 
 
 
 
-pesquisa.addEventListener("input", e => {
-    const value = e.target.value.toLowerCase()
-    todos_artigos.forEach(artigos => {
-        const is_visible = 
-            artigos.titulo.toLowerCase().includes(value)
-        artigos.element.classList.toggle("hide", !is_visible)
 
 
-    })
-
-
-    
-
-})
 
 carregarArtigos();
