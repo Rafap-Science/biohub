@@ -1,5 +1,16 @@
 Foi realizada a criação da página de login com frontend em HTML, CSS e JavaScript e backend Flask.
 
+## ALTERAÇÕES
+
+14/11/2026: 
+
+Foi realizada as seguintes alterações na data referida
+
+* Nova paleta de cores que foi enviada para se adequar ao que foi definido pelo pessoal de 
+Biomed
+* Adição do -btn no botão de ocultação e visualização de senha
+* Mudança de logo
+
 ## COMO EXECUTAR O BACKEND
 
 Na pasta principal do projeto, execute:
