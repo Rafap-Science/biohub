@@ -177,7 +177,7 @@ display: inline-block;
 animation: spinner-rotation 700ms linear infinite;
 }
 
-#visible-password {
+#visible-password-btn {
 position: absolute;
 right: 12px;
 top: 50%;
@@ -191,12 +191,12 @@ font-size: 13px;
 cursor: pointer;
 }
 
-#visible-password:hover {
+#visible-password-btn:hover {
 color: #3C0145;
 text-decoration: underline;
 }
 
-#visible-password:focus-visible {
+#visible-password-btn:focus-visible {
 outline: 2px solid #858b59;
 outline-offset: 2px;
 border-radius: 3px;
