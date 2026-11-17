@@ -43,44 +43,31 @@
 
     </header>
 
-    <main>
+    <main class="main_artigo">
 
         <!-- Div teporaria para os botoes que adcionam artigos-->
         <div class="teste">
-            <div id="campos_teste">
+            <form id="campos_teste">
                 <input id="titulo_input" placeholder="titulo">
                 <input id="subtitulo_input" placeholder="subtitulo">
-                <input id="img_input" placeholder="img">
+                <input id="img_input" placeholder="imagem">
                 <input id="link_input" placeholder="link de destino">
-            </div>
-            <button type="button" id="teste_button">Enviar ao Banco</button>
+            </form>
+            <button type="button" id="teste_button">Enviar ao Banco</button>    
         </div>
-
-
-
+        <div id="teste_pesquisa">
+            <form id="campos_teste_pesquisa">
+                <input type="text" id="titulo_pesquisa">
+            </form>
+        </div>
 
 
         <div class="main_div">
             <section class="artigos" id="lista-artigos">
-
-
+         
                 <div class="card">
-                    <div class="card_imagem">
-                        <img src="" alt="EXEMPLO" class="imagem_cortada" >
-                    </div>
-
-                    <div class="artigo_intro">
-                        <h3>${artigo.titulo}</h3>
-                        <p>${artigo.resumo}</p>
-                        <a href="${artigo.link}">Ler mais</a>
-                    </div>
-                </div>
-                
-                
-
-                
-
-
+                    <h1>Nenhum Artigo encontrado</h1>
+                 </div>
 
             </section>
         </div>

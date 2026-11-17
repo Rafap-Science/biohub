@@ -1429,6 +1429,26 @@ a:focus-visible {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*ADICOÇÔES do seu neguinho Favorito*/
 
 .main_div{
@@ -1436,15 +1456,26 @@ a:focus-visible {
     padding-left: clamp(2vw, 12vw, 12px);
     margin-top: 20px;
     min-height: 100vw;
-
-
-
-
-
-
-
-
 }
+
+.main_artigo {
+    background:
+        linear-gradient(to bottom, transparent 40%, var(--fundo-pagina) 100%),
+        linear-gradient(135deg, var(--lavanda-suave) 0%, var(--lilas-suave) 50%, var(--verde-suave) 100%);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .artigos{
     
@@ -1468,15 +1499,6 @@ a:focus-visible {
 
     margin-top: 80px;
 
-    
-
-
-
-
-
-
-
-
 }
 
 .card {
@@ -1485,24 +1507,38 @@ a:focus-visible {
     padding: 12px;
     height: 100%;
     aspect-ratio: 12/9;
-
+    
     box-sizing: border-box;
 
-
-   
-
-
-
-    
-
-
+    transition: transform 0.3s !important;
 }
+
+.card:hover{
+    transform: translateY(-8px);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .card_imagem{
 
 
     height: 80%;
     overflow: hidden;
+    
     
 
 
@@ -1511,6 +1547,7 @@ a:focus-visible {
 .artigo_intro{
     height: 80%;
     overflow: hidden;
+    font-size: 12px;
 
 
 }
@@ -1518,6 +1555,7 @@ a:focus-visible {
 .imagem_cortada{
     width: 100%;
     height: 100%;
+    border-radius: 9px;
 
 
 
@@ -1542,6 +1580,6 @@ a:focus-visible {
 
 }
 
-#campos_testee{
-
+#campos_teste{
+    color: #172B49;
 }
