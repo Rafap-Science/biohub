@@ -6,6 +6,24 @@ const db = createClient(
 );
 
 const lista = document.getElementById('lista-artigos');
+const searchInput = document.getElementById("titulo_pesquisa")
+
+let artigosCache = [];
+
+searchInput.addEventListener("input", e => {
+  const value = e.target.value.toLowerCase().trim(); 
+  
+  artigosCache.forEach(artigo => {
+    
+    const tituloMatch = artigo.titulo.toLowerCase().includes(value);
+    const subtituloMatch = artigo.sub_titulo ? artigo.sub_titulo.toLowerCase().includes(value) : false;
+    
+    const isVisible = tituloMatch || subtituloMatch;
+    
+    // Alterna a classe 'hide' no elemento do card[cite: 1]
+    artigo.element.classList.toggle("hide", !isVisible);
+  });
+});
 
 
 
@@ -39,7 +57,14 @@ async function carregarArtigos() {
     .order('id', { ascending: false });
   if (error) return console.error(error);
 
-  lista.replaceChildren(...data.map(criarCard));
+  artigosCache = data.map(item => {
+    const cardElement = criarCard(item);
+    return {
+      titulo: item.titulo,
+      sub_titulo: item.sub_titulo,
+      element: cardElement};});
+
+  lista.replaceChildren(...artigosCache.map(item => item.element));
 }
 
 
