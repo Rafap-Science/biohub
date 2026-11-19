@@ -1580,8 +1580,25 @@ a:focus-visible {
 
 }
 
-#campos_teste{
-    color: #172B49;
+#teste_pesquisa{
+    justify-content:center ;
+    display: grid;
+    gap:10px;
+    grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+    
+    backdrop-filter: blur(16px);
+    padding: 50px 30px;
+    border-radius: 10px;
+    
+    
+}
+
+#teste_filros{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+
 }
 
 .hide {

@@ -6,25 +6,48 @@ const db = createClient(
 );
 
 const lista = document.getElementById('lista-artigos');
-const searchInput = document.getElementById("titulo_pesquisa")
+const pesquisa_input = document.getElementById("titulo_pesquisa")
+
+const checkboxSereia = document.querySelector('.sereia');
+const checkboxElefante = document.querySelector('.elefante');
+const checkboxPeixe = document.querySelector('.peixe');
+
 
 let artigosCache = [];
 
-searchInput.addEventListener("input", e => {
-  const value = e.target.value.toLowerCase().trim(); 
-  
-  artigosCache.forEach(artigo => {
-    
-    const tituloMatch = artigo.titulo.toLowerCase().includes(value);
-    const subtituloMatch = artigo.sub_titulo ? artigo.sub_titulo.toLowerCase().includes(value) : false;
-    
-    const isVisible = tituloMatch || subtituloMatch;
-    
-    // Alterna a classe 'hide' no elemento do card[cite: 1]
-    artigo.element.classList.toggle("hide", !isVisible);
-  });
-});
+function filtro_pesquisa(){
 
+  const pesquisa = pesquisa_input.value.toLowerCase().trim();
+
+
+  const categoriasAtivas = [];
+  if (checkboxSereia.checked) categoriasAtivas.push('sereia');
+  if (checkboxElefante.checked) categoriasAtivas.push('elefante');
+  if (checkboxPeixe.checked) categoriasAtivas.push('peixe');
+
+ 
+      
+      artigosCache.forEach(artigo => {
+        
+        const tituloMatch = artigo.titulo.toLowerCase().includes(pesquisa);
+        const subtituloMatch = artigo.sub_titulo ? artigo.sub_titulo.toLowerCase().includes(pesquisa) : false;
+        const texto_mach = tituloMatch || subtituloMatch;
+
+
+        //Provavelmente vou ter que puxar do banco ainda
+        const matchCategoria = categoriasAtivas.length === 0 || categoriasAtivas.includes(artigo.categoria);
+        
+        const isVisible = texto_mach && matchCategoria
+        
+        // Alterna a classe 'hide' no elemento do card[cite: 1]
+        artigo.element.classList.toggle("hide", !isVisible);
+      });
+  }
+
+pesquisa_input.addEventListener("input", filtro_pesquisa);
+checkboxSereia.addEventListener("change", filtro_pesquisa);
+checkboxElefante.addEventListener("change", filtro_pesquisa);
+checkboxPeixe.addEventListener("change", filtro_pesquisa);
 
 
 
@@ -53,7 +76,7 @@ function criarCard(info_banco) {
 async function carregarArtigos() {
   const { data, error } = await db
     .from('artigos')
-    .select('titulo, sub_titulo, link_artigo,imagem')
+    .select('titulo, sub_titulo, link_artigo,imagem, categoria,cliques')
     .order('id', { ascending: false });
   if (error) return console.error(error);
 
@@ -62,7 +85,8 @@ async function carregarArtigos() {
     return {
       titulo: item.titulo,
       sub_titulo: item.sub_titulo,
-      element: cardElement};});
+      element: cardElement,
+      categoria: item.categoria ? item.categoria.toLowerCase().trim() : '',};});
 
   lista.replaceChildren(...artigosCache.map(item => item.element));
 }
