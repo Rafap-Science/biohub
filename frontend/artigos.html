@@ -3,9 +3,178 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>artigos-BioHub</title>
+    <meta name="description" content="Artigos científicos publicados pela BioHub, Liga Acadêmica de Biotecnologia da UniALFA">
+    <title>Artigos - BioHub</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-    
+
+    <!-- ===== FAIXA SUPERIOR ===== -->
+    <div class="faixa-superior">
+        <span class="ponto-verde" aria-hidden="true"></span>
+        <strong>BioHub</strong>
+        <span class="nome-faixa">Liga Acadêmica de Biotecnologia</span>
+    </div>
+
+    <!-- ===== CABEÇALHO ===== -->
+    <header class="cabecalho">
+        <a href="index.html" class="logo" aria-label="BioHub, ir para o início">
+            <img src="img/Logo Oficial - BioHub.jpeg" alt="" class="logo-img">
+            <span class="logo-nome">BioHub</span>
+        </a>
+
+        <nav class="menu" aria-label="Menu principal">
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="noticias.html">Notícias</a></li>
+                <li><a href="artigos.html" aria-current="page">Artigos</a></li>
+                <li><a href="encontros.html">Encontros</a></li>
+            </ul>
+        </nav>
+
+        <a href="area-da-liga.html" class="botao-area-liga">Área da Liga &rarr;</a>
+    </header>
+
+    <main id="inicio">
+
+        <section class="artigos" aria-labelledby="titulo-artigos">
+
+            <div class="cabecalho-secao">
+                <div>
+                    <p class="sobretitulo">Produção científica</p>
+                    <h2 id="titulo-artigos">Artigos</h2>
+                </div>
+            </div>
+
+            <!-- ===== PESQUISA COM LUPA ===== -->
+            <form class="pesquisa" role="search" id="form-pesquisa">
+                <label for="campo-pesquisa" class="sr-only">Pesquisar artigos</label>
+                <input type="search" id="campo-pesquisa" class="pesquisa-campo" placeholder="Pesquisar artigos..." autocomplete="off">
+                <button type="submit" class="pesquisa-botao" aria-label="Pesquisar">
+                    <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="7"></circle>
+                        <line x1="16.5" y1="16.5" x2="21" y2="21"></line>
+                    </svg>
+                </button>
+            </form>
+
+            <!-- ===== GRADE DE ARTIGOS (estilo YouTube) ===== -->
+            <div class="grid-artigos" id="grid-artigos">
+
+                <article class="cartao-artigo">
+                    <a href="#" class="cartao-artigo-link">
+                        <div class="cartao-artigo-capa">
+                            <img src="img/Gemini_Generated_Image_n9bl7xn9bl7xn9bl.jpg" alt="Pesquisador observando uma amostra no microscópio">
+                            <span class="cartao-artigo-tempo">8 min</span>
+                        </div>
+                        <div class="cartao-artigo-info">
+                            <img src="img/Logo Oficial - BioHub.jpeg" alt="" class="cartao-artigo-avatar">
+                            <div>
+                                <h3>Biomarcadores no diagnóstico precoce do câncer</h3>
+                                <p class="cartao-artigo-autor">Profa. Dra. Ana Paula Souza</p>
+                                <p class="cartao-artigo-meta">Oncologia &middot; <time datetime="2026-11-05">05 nov 2026</time></p>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="cartao-artigo">
+                    <a href="#" class="cartao-artigo-link">
+                        <div class="cartao-artigo-capa">
+                            <img src="img/Resultado do Processo Seletivo UniALFA 2026.2.png" alt="Aluna realizando pipetagem em laboratório">
+                            <span class="cartao-artigo-tempo">12 min</span>
+                        </div>
+                        <div class="cartao-artigo-info">
+                            <img src="img/Logo Oficial - BioHub.jpeg" alt="" class="cartao-artigo-avatar">
+                            <div>
+                                <h3>Técnicas de PCR em tempo real aplicadas à biotecnologia</h3>
+                                <p class="cartao-artigo-autor">Liga BioHub</p>
+                                <p class="cartao-artigo-meta">Genética &middot; <time datetime="2026-10-22">22 out 2026</time></p>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="cartao-artigo">
+                    <a href="#" class="cartao-artigo-link">
+                        <div class="cartao-artigo-capa">
+                            <img src="img/Congresso de Biomedicina UniALFA.png" alt="Estudantes reunidos em um auditório">
+                            <span class="cartao-artigo-tempo">6 min</span>
+                        </div>
+                        <div class="cartao-artigo-info">
+                            <img src="img/Logo Oficial - BioHub.jpeg" alt="" class="cartao-artigo-avatar">
+                            <div>
+                                <h3>Hematologia clínica: casos práticos e interpretação laboratorial</h3>
+                                <p class="cartao-artigo-autor">Profissional convidado</p>
+                                <p class="cartao-artigo-meta">Hematologia &middot; <time datetime="2026-10-10">10 out 2026</time></p>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="cartao-artigo">
+                    <a href="#" class="cartao-artigo-link">
+                        <div class="cartao-artigo-capa">
+                            <img src="img/Espaço UniALFA de Estudo Colaborativo.png" alt="Estudantes caminhando em área verde do campus">
+                            <span class="cartao-artigo-tempo">10 min</span>
+                        </div>
+                        <div class="cartao-artigo-info">
+                            <img src="img/Logo Oficial - BioHub.jpeg" alt="" class="cartao-artigo-avatar">
+                            <div>
+                                <h3>Biotecnologia ambiental e recuperação de manguezais</h3>
+                                <p class="cartao-artigo-autor">Liga BioHub</p>
+                                <p class="cartao-artigo-meta">Meio ambiente &middot; <time datetime="2026-09-28">28 set 2026</time></p>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+
+            </div>
+
+            <p class="artigos-vazio" id="artigos-vazio" hidden>Nenhum artigo encontrado para essa pesquisa.</p>
+
+        </section>
+
+    </main>
+
+    <!-- ===== RODAPÉ ===== -->
+    <footer class="rodape">
+
+        <div class="rodape-topo">
+            <div class="rodape-marca">
+                <img src="img/Logo Oficial - BioHub.jpeg" alt="Logo da Liga Acadêmica de Biotecnologia" class="rodape-logo">
+                <div>
+                    <p class="rodape-titulo">BioHub</p>
+                    <p>Liga Acadêmica de Biotecnologia &middot; UniALFA</p>
+                    <p>email-exemplo@biohub.com &middot; @lab-unialfa</p>
+                </div>
+            </div>
+
+            <p class="rodape-descricao">
+                Ciência que conecta, conhecimento que transforma. Um espaço para compartilhar descobertas e fortalecer a comunidade acadêmica.
+            </p>
+        </div>
+
+        <nav class="rodape-links" aria-label="Links do rodapé">
+            <a href="index.html">Início</a>
+            <a href="noticias.html">Notícias</a>
+            <a href="artigos.html">Artigos</a>
+            <a href="encontros.html">Encontros</a>
+        </nav>
+
+        <div class="rodape-final">
+            <p class="direitos">&copy; 2026 Projeto BioHub &middot; Todos os Direitos Reservados</p>
+            <a href="#inicio" class="voltar-topo">Voltar ao topo &uarr;</a>
+        </div>
+
+    </footer>
+
+    <script src="js/main.js"></script>
 </body>
 </html>
