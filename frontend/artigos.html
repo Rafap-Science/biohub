@@ -45,6 +45,69 @@
 
     <main class="main_artigo">
 
+        
+        
+
+            <div class="cabecalho-secao">
+                <div>
+                    <p class="sobretitulo">Produção científica</p>
+                    <h2 id="titulo-artigos">Artigos</h2>
+                </div>
+            </div>
+            
+            <form class="pesquisa" role="search" id="form-pesquisa">
+                
+                <input type="search" id="titulo_pesquisa" class="pesquisa-campo" placeholder="Pesquisar artigos..." autocomplete="off">
+                
+                <button type="submit" class="pesquisa-botao" id="pesquisar" aria-label="Pesquisar">
+                    <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="7"></circle>
+                        <line x1="16.5" y1="16.5" x2="21" y2="21"></line>
+                    </svg>
+                </button>
+                
+                
+            </form>
+            
+            
+        
+
+
+        <div class="main_div">
+            <section class="artigos" id="lista-artigos">
+                
+                <a href="" class="cartao-artigo-link">
+                    <div class="cartao-artigo-capa">
+                                        <img src="" alt="....">                
+                    </div>
+                    <div class="cartao-artigo-info">
+
+                        <div>
+                            <h3>Nenhum artigo encontrado</h3>
+                            <p></p>
+                            <p class="cartao-artigo-autor"></p>
+                            <p class="cartao-artigo-meta">
+                                <span></span>
+                                <time datetime=""></time>
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </section>
+        </div>
+
+
+
+        <form id="teste_filros">
+           <label><input class="sereia" type="checkbox" >Genética</label>
+            <label><input class="elefante" type="checkbox">Meio ambiente</label>
+            <label><input class="peixe" type="checkbox">Oncologia</label>
+        </form>
+
+
+        
+
+
         <!-- Div teporaria para os botoes que adcionam artigos-->
         <div class="teste">
             <form id="campos_teste">
@@ -55,27 +118,8 @@
             </form>
             <button type="button" id="teste_button">Enviar ao Banco</button>    
         </div>
-        <div id="teste_pesquisa">
-            <form id="campos_teste_pesquisa">
-                <input type="text" id="titulo_pesquisa" placeholder="PESQUISA">
-            </form>
-            <form id="teste_filros">
-                <label><input class="sereia" type="checkbox" >sereia</label>
-                <label><input class="elefante" type="checkbox">elefante</label>
-                <label><input class="peixe" type="checkbox">peixe</label>
-            </form>
-        </div>
 
-
-        <div class="main_div">
-            <section class="artigos" id="lista-artigos">
-         
-                <div class="card">
-                    <h1>Nenhum Artigo encontrado</h1>
-                 </div>
-
-            </section>
-        </div>
+        
 
 
 

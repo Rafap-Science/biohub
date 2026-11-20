@@ -6,7 +6,8 @@ const db = createClient(
 );
 
 const lista = document.getElementById('lista-artigos');
-const pesquisa_input = document.getElementById("titulo_pesquisa")
+const pesquisa_input = document.getElementById("titulo_pesquisa");
+
 
 const checkboxSereia = document.querySelector('.sereia');
 const checkboxElefante = document.querySelector('.elefante');
@@ -17,20 +18,20 @@ let artigosCache = [];
 
 function filtro_pesquisa(){
 
-  const pesquisa = pesquisa_input.value.toLowerCase().trim();
+  const pesquisa = pesquisa_input.value.toLowerCase().trim().normalize('NFD').replace(/[̀-ͯ]/g, '');
 
 
   const categoriasAtivas = [];
-  if (checkboxSereia.checked) categoriasAtivas.push('sereia');
-  if (checkboxElefante.checked) categoriasAtivas.push('elefante');
-  if (checkboxPeixe.checked) categoriasAtivas.push('peixe');
+  if (checkboxSereia.checked) categoriasAtivas.push('genética');
+  if (checkboxElefante.checked) categoriasAtivas.push('meio ambiente');
+  if (checkboxPeixe.checked) categoriasAtivas.push('oncologia');
 
  
       
       artigosCache.forEach(artigo => {
         
-        const tituloMatch = artigo.titulo.toLowerCase().includes(pesquisa);
-        const subtituloMatch = artigo.sub_titulo ? artigo.sub_titulo.toLowerCase().includes(pesquisa) : false;
+        const tituloMatch = artigo.titulo.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').includes(pesquisa);
+        const subtituloMatch = artigo.sub_titulo ? artigo.sub_titulo.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').includes(pesquisa) : false;
         const texto_mach = tituloMatch || subtituloMatch;
 
 
@@ -50,33 +51,63 @@ checkboxElefante.addEventListener("change", filtro_pesquisa);
 checkboxPeixe.addEventListener("change", filtro_pesquisa);
 
 
+function formatarData(timestamp) {
+  if (!timestamp) return '';
+  const data = new Date(String(timestamp).replace(' ', 'T'));
+  if (Number.isNaN(data.getTime())) return '';
 
+  return new Intl.DateTimeFormat('pt-BR', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+  })
+    .format(data)
+    .replace(/ de (\d{4})$/, ' $1'); // "14 de novembro 2026"
+}
 
 
 function criarCard(info_banco) {
-  const card = document.createElement('div');
-  card.className = 'card';
+  const card = document.createElement('article');
+  card.className = 'cartao-artigo';
   card.innerHTML = `
-    <a>
-      <div class="card_imagem">
-        <img src="" alt="EXEMPLO" class="imagem_cortada" >
+    <a href="" class="cartao-artigo-link">
+      <div class="cartao-artigo-capa">
+                            <img src="" alt="....">
+                            
       </div>
-    
-      <div class="artigo_intro">
-        <h3></h3><p></p>
+      <div class="cartao-artigo-info">
+                            
+        <div>
+          <h3></h3>
+          <p></p>
+          <p class="cartao-artigo-autor">Profissional convidado</p>
+          <p class="cartao-artigo-meta">
+            <span>&middot;</span>
+            <time datetime=""></time>
+          </p>
+        </div>
       </div>
-    </a>`
+    </a>
+    `
   card.querySelector('h3').textContent = info_banco.titulo;
   card.querySelector('p').textContent = info_banco.sub_titulo ?? '';
   card.querySelector('a').href = info_banco.link_artigo ?? '#';
   card.querySelector('img').src = info_banco.imagem;
+  card.querySelector  ('span').textContent = info_banco.categoria + " · ";
+  
+  const timeEl = card.querySelector('time');
+  timeEl.textContent = formatarData(info_banco.created_at);
+  if (info_banco.created_at) {
+    timeEl.setAttribute('datetime', info_banco.created_at);
+  }
+
   return card;
 }
 
 async function carregarArtigos() {
   const { data, error } = await db
     .from('artigos')
-    .select('titulo, sub_titulo, link_artigo,imagem, categoria,cliques')
+    .select('titulo, sub_titulo, link_artigo,imagem, categoria,cliques,created_at')
     .order('id', { ascending: false });
   if (error) return console.error(error);
 
